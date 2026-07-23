@@ -5,7 +5,7 @@ import numpy as np
 
 # Web Page Setup
 st.set_page_config(page_title="WVF Near 0 Scanner with Time", layout="wide")
-st.title("💥 WVF <= 0.05 Filtered - Multi-Signal Time Scanner")
+st.title("💥 WVF <= 0.01 Filtered - Multi-Signal Time Scanner")
 st.write("Displays all exact IST timestamps when a stock met the WVF condition during the selected day.")
 
 # Your Custom Stock List
@@ -81,7 +81,7 @@ with st.spinner('Scanning intraday timestamps...'):
             for timestamp, bar in df_target_day_bars.iterrows():
                 wvf_val = bar['WVF']
                 
-                if pd.notna(wvf_val) and wvf_val <= 0.05:
+                if pd.notna(wvf_val) and wvf_val <= 0.01:
                     cur_high = bar['High']
                     cur_low = bar['Low']
                     
